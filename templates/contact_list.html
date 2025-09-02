@@ -1,7 +1,8 @@
-{% {% extends "components/base.html" %}%}
+{% extends "components/base.html" %}
 
 {% block content %}
     <h1>Contact List</h1>
+    <button><a href="{% url 'contact_create' %}">New Contact</a></button>
     <ul>
         {% for contact in contacts %}
             <li>{{ contact.name }} - {{ contact.email }} - {{ contact.phone }}</li>
