@@ -17,5 +17,4 @@ def contact_create(request):
             form.save()
             return redirect('contact_list')
 
-
     return render(request, 'contact_create.html', {'form': ContactForm()})
