@@ -24,3 +24,12 @@ def contact_detail(request, pk):
     contact = Contact.objects.get(pk=pk)
 
     return render(request, 'contact_detail.html', {'contact': contact})
+
+
+def contact_delete(request, pk):
+    contact = Contact.objects.get(pk=pk)
+    if request.method == 'POST':
+        contact.delete()
+        return redirect('contact_list')
+
+    return render(request, 'contact_delete.html', {'contact': contact})
