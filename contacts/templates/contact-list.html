@@ -9,10 +9,11 @@
 
 <body>
   <h1>Contact List</h1>
+  <a href="{% url 'contact-create' %}">Create New Contact</a>
   <ul>
     {% for contact in contacts %}
       <li>
-        <a href="{% url 'contact-detail' contact.pk %}">{{ contact.first_name }} {{ contact.last_name }}</a>
+        <a href="{% url 'contact-detail' contact.pk %}">{{ contact.last_name }}, {{ contact.first_name }}</a>
       </li>
     {% empty %}
       <li>No contacts available.</li>
