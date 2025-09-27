@@ -17,9 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from contacts.views import ContactListView
+from contacts import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', ContactListView.as_view(), name='contact-list'),
+    path('', views.ContactListView.as_view(), name='contact-list'),
+    path('contacts/<int:pk>/', views.ContactDetailView.as_view(), name='contact-detail'),
 ]
