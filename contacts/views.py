@@ -28,3 +28,9 @@ class ContactUpdateView(generic.UpdateView):
     template_name = 'contact-form.html'
     success_url = reverse_lazy('contact-list')
     fields = '__all__'
+
+
+class ContactDeleteView(generic.DeleteView):
+    model = Contact
+    template_name = 'contact-delete.html'
+    success_url = reverse_lazy('contact-list')

@@ -17,6 +17,7 @@
   <p>Address: {{ contact.address }}</p>
 
   <a href="{% url 'contact-update' contact.pk %}">Edit</a>
+  <a href="{% url 'contact-delete' contact.pk %}">Delete</a>
 </body>
 
 </html>

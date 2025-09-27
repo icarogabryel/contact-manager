@@ -8,8 +8,8 @@
 </head>
 
 <body>
-  {% if contact.id %}
-    <a href="{% url 'contact-detail' contact.id %}">Back</a>
+  {% if contact.pk %}
+    <a href="{% url 'contact-detail' contact.pk %}">Back</a>
     <h1>Edit Contact</h1>
   {% else %}
     <a href="{% url 'contact-list' %}">Back</a>
