@@ -10,6 +10,7 @@
 <body>
   <h1>Contact List</h1>
   <a href="{% url 'contact-create' %}">Create New Contact</a>
+
   <ul>
     {% for contact in contacts %}
       <li>

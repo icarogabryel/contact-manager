@@ -1,21 +1,29 @@
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, DetailView, ListView
+from django.views import generic
 
 from contacts.models import Contact
 
 
-class ContactListView(ListView):
+class ContactListView(generic.ListView):
     model = Contact
     template_name = 'contact-list.html'
     context_object_name = 'contacts'
 
 
-class ContactDetailView(DetailView):
+class ContactDetailView(generic.DetailView):
     model = Contact
     template_name = 'contact-detail.html'
     context_object_name = 'contact'
 
-class ContactCreateView(CreateView):
+
+class ContactCreateView(generic.CreateView):
+    model = Contact
+    template_name = 'contact-form.html'
+    success_url = reverse_lazy('contact-list')
+    fields = '__all__'
+
+
+class ContactUpdateView(generic.UpdateView):
     model = Contact
     template_name = 'contact-form.html'
     success_url = reverse_lazy('contact-list')

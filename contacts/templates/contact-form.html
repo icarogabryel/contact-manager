@@ -8,9 +8,14 @@
 </head>
 
 <body>
-  <a href="{% url 'contact-list' %}">Back to Contact List</a>
+  {% if contact.id %}
+    <a href="{% url 'contact-detail' contact.id %}">Back</a>
+    <h1>Edit Contact</h1>
+  {% else %}
+    <a href="{% url 'contact-list' %}">Back</a>
+    <h1>Create New Contact</h1>
+  {% endif %}
 
-  <h1>Create Contact</h1>
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
